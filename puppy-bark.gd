@@ -15,7 +15,7 @@ func _enter_tree() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if !event.is_echo() && event.is_pressed():
+		if event.is_pressed():
 			var available : Array[AudioStreamPlayer] = audio_players.filter(
 				func(ap: AudioStreamPlayer): 
 					return !ap.playing
